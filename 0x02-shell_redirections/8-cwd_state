@@ -1,0 +1,2 @@
+#!/bin/bash
+echols -la > ls_cwd_content
