@@ -48,6 +48,6 @@ frontend  beta-scribbles.tech-https-frontend
 
 backend beta-scribbles.tech-backend
         balance roundrobin
-        server 11580-web-01 3.236.44.4:80 check
-        server 11580-web-02 3.235.147.115:80 check
+        server 11580-web-01 3.236.44.4:443 check
+        server 11580-web-02 3.235.147.115:443 check
 # end of parameters
