@@ -10,7 +10,6 @@ global
 
         # Default SSL material locations
         ca-base /etc/ssl/certs
-        crt-base /etc/ssl/private
 
         # Default ciphers to use on SSL-enabled listening sockets.
         # For more information, see ciphers(1SSL). This list is from:
@@ -37,7 +36,7 @@ defaults
         bind :80
         option forwardfor
 
-listen web-servers
+frontend http
         bind :80
         mode http
         default_backend web-servers
@@ -54,7 +53,7 @@ frontend www-https
         default_backend web-servers
 
 backend web-servers
-        redirect scheme https code 301 if !{ ssl_fc }
         balance roundrobin
+        redirect scheme https if !{ ssl_fc }
         server 546-web-01 104.196.55.234:80 check
         server 546-web-02 35.229.108.9:80 check
