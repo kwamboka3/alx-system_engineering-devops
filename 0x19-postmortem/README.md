@@ -35,7 +35,7 @@ From Oct 29 12:30 p.m to Oct 31 9:30 p.m Requests to the website responded with 
 The root of the problem was due to an incorrect file name in the last update of the site, specifically in the extension of the updated php module.
 
 Initially it was verified that the files were in the appropriate apache path “sites / available”, with the `ps aux` command the processes associated with apache were verified, then with the `strace` command the returns were checked the file was identified, a script was generated to correct the problem, it was validated with the `curl` command and access from the browser.
-![](https://github.com/juliushakes/alx-system_engineering-devops/blob/main/0x19-postmortem/images/accessing.png?raw=true)
+
 
 ### Corrective and Preventative Measures
 In light of the incident in the last two days, an evaluation and review of the update process carried out was made, it was determined that stages were omitted for the release of this module to production, to prevent future incidents, the following improvements were implemented:
